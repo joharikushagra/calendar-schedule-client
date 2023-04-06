@@ -6,6 +6,7 @@ import axios from "axios";
 import Loader from "../utils/Loader";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowCircleRight } from "@fortawesome/free-solid-svg-icons";
+import moment from "moment";
 
 const courseOptions = [
   {
@@ -56,10 +57,11 @@ const Enroll = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
+    const payload = { ...courseDetails, startDate: moment(new Date()).utcOffset(0,true) };
     try {
       const data = await axios.post(
         `${process.env.REACT_APP_BACKEND_URL}/enroll`,
-        courseDetails,
+        payload,
         {
           Headers: {
             "Content-Type": "application/json",
