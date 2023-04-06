@@ -94,6 +94,7 @@ const Enroll = () => {
               </label>
               <Select
                 options={courseOptions}
+                required
                 onChange={(e) => handleCourse("course", e)}
               />
             </div>
@@ -106,6 +107,7 @@ const Enroll = () => {
               </label>
               <Select
                 options={timeCommitmentOptions}
+                required
                 onChange={(e) => handleCourse("committedTime", e)}
               />
             </div>
