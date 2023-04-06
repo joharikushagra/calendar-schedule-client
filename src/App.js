@@ -1,15 +1,17 @@
-import React, { useState } from "react";
-import Calendar from "react-calendar";
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Enroll from "./components/Enroll";
+import Schedule from "./components/Schedule";
 import "./App.css";
-import 'react-calendar/dist/Calendar.css';
 
 
 export default function App() {
-  const [value, onChange] = useState(new Date());
-
   return (
-    <div>
-      <Calendar onChange={onChange} value={value} tileContent="hjjgf"/>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Enroll />} />
+        <Route path="/schedule" element={<Schedule />} />
+      </Routes>
+    </Router>
   );
 }
