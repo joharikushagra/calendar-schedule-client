@@ -1,6 +1,6 @@
 export const customStyles = {
     content: {
-      height: "600px",
+      maxHeight: "600px",
       top: "50%",
       left: "50%",
       right: "auto",

@@ -4,6 +4,7 @@ import axios from "axios";
 import "react-calendar/dist/Calendar.css";
 import "../styles/calendar.css";
 import TileContent from "./TileContent";
+import Loader from "../utils/Loader";
 
 const Schedule = () => {
   const [schedule, setSchedule] = useState(null);
@@ -30,6 +31,7 @@ const Schedule = () => {
 
   return (
     <div className="w-full flex justify-center items-center my-16">
+      {!schedule && <Loader />}
       <Calendar
         className="shadow-xl rounded-xl p-4"
         tileContent={(props) => <TileContent {...props} schedule={schedule} />}
