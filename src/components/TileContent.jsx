@@ -33,7 +33,7 @@ const TileContent = ({ date, schedule }) => {
             </li>
           ))}
         {schedule && schedule[formattedDate] && (
-          <li className="py-2 text-xs align-left text-gray-500">
+          <li className="py-2 text-xs align-left font-bold text-gray-500">
             +{schedule[formattedDate].length - 3} more
           </li>
         )}
